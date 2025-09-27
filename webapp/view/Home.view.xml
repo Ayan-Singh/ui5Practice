@@ -1,6 +1,31 @@
 <mvc:View controllerName="bookstore.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+    xmlns="sap.m"
+    xmlns:f="sap.f">
+	<Panel id="panelForBookList" backgroundDesign="Transparent">
+		<headerToolbar>
+			<Toolbar height="3rem">
+				<Title text="BookStore App" />
+			</Toolbar>
+		</headerToolbar>
+
+		<f:GridList
+			id="bookList"
+			headerText="Recommended Books"
+			items="{books>/Books}"
+            itemPress="onBookPress">
+			<f:GridListItem type="Active">
+				<VBox class="sapUiSmallMargin">
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+					</layoutData>
+                    <Image src="{books>Image}" decorative="false" width="150px"/>
+					<Title text="{books>Title}" wrapping="true" />
+					<Label text="{books>Author}" wrapping="true" />
+                    <Text text="{books>Publisher}" wrapping="true" />
+                    <ObjectNumber number="{books>Price}" unit="INR" state="Success"/>
+				</VBox>
+			</f:GridListItem>
+		</f:GridList>
+	</Panel>
 </mvc:View>
