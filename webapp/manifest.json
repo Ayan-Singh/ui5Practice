@@ -51,6 +51,11 @@
         "settings": {
           "bundleName": "bookstore.i18n.i18n"
         }
+      },
+      "books":{
+        "type" : "sap.ui.model.json.JSONModel",
+        "uri" :"model/books.json"
+
       }
     },
     "resources": {
