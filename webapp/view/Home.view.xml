@@ -1,31 +1,44 @@
 <mvc:View controllerName="bookstore.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:f="sap.f">
-	<Panel id="panelForBookList" backgroundDesign="Transparent">
-		<headerToolbar>
-			<Toolbar height="3rem">
-				<Title text="BookStore App" />
-			</Toolbar>
-		</headerToolbar>
-
-		<f:GridList
-			id="bookList"
-			headerText="Recommended Books"
-			items="{books>/Books}"
-            itemPress="onBookPress">
-			<f:GridListItem type="Active">
+    xmlns:f="sap.f"
+	xmlns:tnt="sap.tnt">
+	<tnt:ToolHeader id="appHeader" class="sapUiTinyMargin">
+			<Title text="UI5 Practice Apps" wrapping="false" id="appName">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="Disappear"/>
+				</layoutData>
+			</Title>
+			<ToolbarSpacer />
+			<OverflowToolbarButton icon="sap-icon://action-settings" type="Transparent" text="Settings"/>
+			<Button icon="sap-icon://bell" type="Transparent" tooltip="Notification">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</Button>
+			<tnt:ToolHeaderUtilitySeparator/>
+			<OverflowToolbarButton icon="sap-icon://grid" type="Transparent" text="My Products" tooltip="My Products"/>
+			<Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press=".onAvatarPressed" tooltip="Profile">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="NeverOverflow"/>
+				</layoutData>
+			</Avatar>
+		</tnt:ToolHeader>
+		<mvc:content>
+			<f:GridList
+			id="gridList">
+			<f:GridListItem>
 				<VBox class="sapUiSmallMargin">
 					<layoutData>
 						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
 					</layoutData>
-                    <Image src="{books>Image}" decorative="false" width="150px"/>
-					<Title text="{books>Title}" wrapping="true" />
-					<Label text="{books>Author}" wrapping="true" />
-                    <Text text="{books>Publisher}" wrapping="true" />
-                    <ObjectNumber number="{books>Price}" unit="INR" state="Success"/>
+
+					<Title text="TODO List App" wrapping="true" />
+					<Label text="App to maintain your daily task" wrapping="true" />
 				</VBox>
 			</f:GridListItem>
 		</f:GridList>
-	</Panel>
+		
+		
+		</mvc:content>
 </mvc:View>
