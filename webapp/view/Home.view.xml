@@ -1,44 +1,5 @@
 <mvc:View controllerName="bookstore.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:f="sap.f"
-	xmlns:tnt="sap.tnt">
-	<tnt:ToolHeader id="appHeader" class="sapUiTinyMargin">
-			<Title text="UI5 Practice Apps" wrapping="false" id="appName">
-				<layoutData>
-					<OverflowToolbarLayoutData priority="Disappear"/>
-				</layoutData>
-			</Title>
-			<ToolbarSpacer />
-			<OverflowToolbarButton icon="sap-icon://action-settings" type="Transparent" text="Settings"/>
-			<Button icon="sap-icon://bell" type="Transparent" tooltip="Notification">
-				<layoutData>
-					<OverflowToolbarLayoutData priority="NeverOverflow"/>
-				</layoutData>
-			</Button>
-			<tnt:ToolHeaderUtilitySeparator/>
-			<OverflowToolbarButton icon="sap-icon://grid" type="Transparent" text="My Products" tooltip="My Products"/>
-			<Avatar src="test-resources/sap/tnt/images/Woman_avatar_01.png" displaySize="XS" press=".onAvatarPressed" tooltip="Profile">
-				<layoutData>
-					<OverflowToolbarLayoutData priority="NeverOverflow"/>
-				</layoutData>
-			</Avatar>
-		</tnt:ToolHeader>
-		<mvc:content>
-			<f:GridList
-			id="gridList">
-			<f:GridListItem>
-				<VBox class="sapUiSmallMargin">
-					<layoutData>
-						<FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
-					</layoutData>
-
-					<Title text="TODO List App" wrapping="true" />
-					<Label text="App to maintain your daily task" wrapping="true" />
-				</VBox>
-			</f:GridListItem>
-		</f:GridList>
-		
-		
-		</mvc:content>
+    xmlns:f="sap.f">
 </mvc:View>
