@@ -2,5 +2,22 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+    <List
+		headerText="Products"
+		headerLevel="H2"
+		items="{
+        path: '/Products',
+        parameters: {
+            expand: 'Category',
+            select: 'ProductName,Category,UnitPrice',
+            $orderby: 'UnitPrice desc'  
+        }
+    }">
+		<StandardListItem
+			title="{ProductName}"
+            description="{Category/CategoryName}"
+            info="{UnitPrice}"/>
+          
+	</List>
     </Page>
 </mvc:View>
